@@ -10,7 +10,7 @@ func cyrFilterHelper(s reflect.Value) {
 		f := s.Field(i)
 
 		for ; f.Kind() == reflect.Ptr; f = f.Elem() {
-		} // dereferencing the field if it is pointer
+		} // dereferencing the field if it is a pointer
 
 		if f.Kind() == reflect.String && f.CanSet() {
 			cyrReg := regexp.MustCompile("\\p{Cyrillic}")
